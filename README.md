@@ -91,7 +91,7 @@ What about having trace logs? What about logging errors?
 ### Testing
 
 I've added some tests for the use-cases. I'm using vitest for testing.
-However, I did added tests for the API routes.
+However, I did not add tests for the API routes.
 
 ### API Docs
 I usually go with Swagger for API documentation.
