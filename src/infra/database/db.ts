@@ -1,6 +1,6 @@
 import { IDatabase } from 'src/domain/interfaces/IDatabase';
 import { injectable } from 'tsyringe';
-import { dependencyContainer } from '../../diContainer';
+import { dependencyContainer } from '../../diContainer.js';
 import type { BlogPost } from '../../modules/blogPost/blogPost.model';
 
 @injectable({ token: 'Database' })

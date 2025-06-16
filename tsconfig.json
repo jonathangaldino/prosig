@@ -7,7 +7,7 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "noEmit": true,
-    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": false,
     "outDir": "dist",
     "lib": [ "esnext" ],
     "types": [ "node" ],

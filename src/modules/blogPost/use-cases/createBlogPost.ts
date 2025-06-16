@@ -1,4 +1,4 @@
-import { dependencyContainer } from 'src/diContainer';
+import { dependencyContainer } from 'src/diContainer.js';
 
 import { IDatabase } from 'src/domain/interfaces/IDatabase.js';
 import { BlogPost } from '../blogPost.model.js';
