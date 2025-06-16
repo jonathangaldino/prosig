@@ -20,11 +20,9 @@ API Endpoints:
   post.
 
 - POST /api/posts: Create a new blog post.
-- GET /api/posts/{id}: Retrieve a specific blog post by its ID, including its
-  title, content, and a list of associated comments.
+- GET /api/posts/{id}: Retrieve a specific blog post by its ID, including its title, content, and a list of associated comments.
 
-- POST /api/posts/{id}/comments: Add a new comment to a specific blog
-  post.
+- POST /api/posts/{id}/comments: Add a new comment to a specific blog post.
 
 ## Challenge Submission
 

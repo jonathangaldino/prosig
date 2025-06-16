@@ -2,4 +2,6 @@
 'prosigliere-code-challenge': major
 ---
 
-using swc as compiler
+WHAT: using swc as compiler
+WHY: Improve build and dev experience
+HOW: Use swc as compiler
