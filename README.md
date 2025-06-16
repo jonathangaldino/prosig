@@ -95,7 +95,7 @@ However, I did not add tests for the API routes.
 
 ### API Docs
 I usually go with Swagger for API documentation.
-For fastify, there is a plugin called (fastify-swagger)[https://github.com/fastify/fastify-swagger]. Perfect for this project.
+For fastify, there is a plugin called [fastify-swagger](https://github.com/fastify/fastify-swagger). Perfect for this project. 
 
 P.s: Any other level of documentation I put in the company's internal documentation (Confluence, etc).
 
