@@ -3,7 +3,8 @@
   "jsc": {
     "parser": {
       "syntax": "typescript",
-      "topLevelAwait": true
+      "topLevelAwait": true,
+      "decorators": true
     },
     "target": "esnext",
     "baseUrl": ".",

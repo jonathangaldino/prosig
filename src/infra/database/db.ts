@@ -1,3 +1,17 @@
+import { IDatabase } from 'src/domain/interfaces/IDatabase';
+import { injectable } from 'tsyringe';
+import { dependencyContainer } from '../../diContainer';
 import type { BlogPost } from '../../modules/blogPost/blogPost.model';
 
-export const posts: BlogPost[] = [];
+@injectable({ token: 'Database' })
+class InMemoryDB implements IDatabase {
+  posts: BlogPost[] = [];
+
+  reset() {
+    this.posts = [];
+  }
+}
+
+dependencyContainer.register<IDatabase>('Database', {
+  useValue: new InMemoryDB(),
+});

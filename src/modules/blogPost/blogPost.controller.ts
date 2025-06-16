@@ -1,6 +1,5 @@
-import { posts } from '../../infra/database/db.js';
+import { db } from '../../infra/database/db.js';
 import type { Comment } from '../comment/comment.model.js';
-import { createCommentId } from '../comment/createCommentId.js';
 import type { BlogPost } from './blogPost.model.js';
 import type { PostId } from './blogPost.types.js';
 import { CreateBlogPost } from './use-cases/createBlogPost.js';
@@ -9,7 +8,7 @@ type GetPostsResponse = { id: string; title: string; commentsCount: number }[];
 
 export class BlogPostController {
   getBlogPosts(): GetPostsResponse {
-    return posts.map((post) => ({
+    return db.posts.map((post) => ({
       id: post.id,
       title: post.title,
       commentsCount: post.comments.length,
@@ -18,7 +17,6 @@ export class BlogPostController {
 
   createBlogPost(input: { title: string; content: string }): BlogPost {
     const newBlogPost = CreateBlogPost(input.title, input.content);
-    posts.push(newBlogPost);
     return newBlogPost;
   }
 
@@ -32,14 +30,7 @@ export class BlogPostController {
     return post;
   }
 
-  addCommentToPost(blogPostId: PostId, content: string): Comment | null {
-    const post = posts.find((post) => post.id === blogPostId);
-    if (!post) {
-      return null;
-    }
-    const newComment: Comment = { id: createCommentId(), content };
-
-    post.comments.push(newComment);
-    return newComment;
+  addCommentToPost(blogPostId: PostId, content: string): Comment {
+    return this.addCommentToPost(blogPostId, content);
   }
 }

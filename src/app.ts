@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import { server } from './infra/http/server.js';
 
 const start = async () => {
