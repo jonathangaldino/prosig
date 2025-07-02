@@ -25,7 +25,7 @@ export function addBlogPostRoutes(server: FastifyInstance) {
 
   server.get<{
     Params: { id: string };
-  }>('/api/posts/:id/comments', (request, reply) => {
+  }>('/api/posts/:id', (request, reply) => {
     const { id } = request.params;
 
     if (!isValidPostId(id)) {
