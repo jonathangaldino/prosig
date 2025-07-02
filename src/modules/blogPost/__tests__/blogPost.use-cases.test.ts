@@ -1,8 +1,7 @@
 // import { db } from 'src/infra/database/db';
-import { beforeEach } from 'node:test';
 import { dependencyContainer } from 'src/diContainer';
 import { IDatabase } from 'src/domain/interfaces/IDatabase';
-import { beforeAll, describe, expect, it, vi } from 'vitest';
+import { beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { PostId } from '../blogPost.types';
 import { addCommentToBlogPost } from '../use-cases/addCommentToBlogPost';
 import { CreateBlogPost } from '../use-cases/createBlogPost';

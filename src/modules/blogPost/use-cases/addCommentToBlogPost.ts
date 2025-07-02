@@ -7,7 +7,7 @@ import { PostId } from '../blogPost.types';
 export function addCommentToBlogPost(
   blogPostId: PostId,
   content: string,
-): Comment {
+): Comment | null {
   const db = dependencyContainer.resolve<IDatabase>('Database');
   const post = db.posts.find((post) => post.id === blogPostId);
 

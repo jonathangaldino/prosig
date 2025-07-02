@@ -1,6 +1,7 @@
 import type { Comment } from '../comment/comment.model.js';
 import type { BlogPost } from './blogPost.model.js';
 import type { PostId } from './blogPost.types.js';
+import { addCommentToBlogPost } from './use-cases/addCommentToBlogPost.js';
 import { CreateBlogPost } from './use-cases/createBlogPost.js';
 import { GetBlogPostById } from './use-cases/getBlogPostById.js';
 import { GetBlogPosts } from './use-cases/getBlogPosts.js';
@@ -27,7 +28,7 @@ export class BlogPostController {
     return GetBlogPostById(blogPostId);
   }
 
-  addCommentToPost(blogPostId: PostId, content: string): Comment {
-    return this.addCommentToPost(blogPostId, content);
+  addCommentToPost(blogPostId: PostId, content: string): Comment | null {
+    return addCommentToBlogPost(blogPostId, content);
   }
 }
